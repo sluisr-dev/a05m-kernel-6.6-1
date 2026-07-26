@@ -23,8 +23,8 @@
 			ibatucp-alm = <1000000>;
 			vbusovp = <10000000>;
 			vbusovp-alm = <9000000>;
-			ibusocp = <4250000>;
-			ibusocp-alm = <4000000>;
+			ibusocp = <5000000>;	/* OC: 4250000 -> 5000000 */
+			ibusocp-alm = <4750000>;	/* OC: 4000000 -> 4750000 */
 			vacovp = <11000000>;
 			wdt = <30000000>;
 			ibat-rsense = <0>; /* 0: 2mohm, 1: 5mohm */
@@ -63,8 +63,8 @@
 			ibatucp-alm = <1000000>;
 			vbusovp = <10000000>;
 			vbusovp-alm = <9000000>;
-			ibusocp = <4250000>;
-			ibusocp-alm = <4000000>;
+			ibusocp = <5000000>;	/* OC: 4250000 -> 5000000 */
+			ibusocp-alm = <4750000>;	/* OC: 4000000 -> 4750000 */
 			vacovp = <11000000>;
 			wdt = <1000000>;
 			ibat-rsense = <0>; /* 0: 2mohm, 1: 5mohm */
@@ -111,8 +111,8 @@
 			ibatucp-alm = <1000000>;
 			vbusovp = <10000000>;
 			vbusovp-alm = <9000000>;
-			ibusocp = <4250000>;
-			ibusocp-alm = <4000000>;
+			ibusocp = <5000000>;	/* OC: 4250000 -> 5000000 */
+			ibusocp-alm = <4750000>;	/* OC: 4000000 -> 4750000 */
 			vacovp = <11000000>;
 			wdt = <30000000>;
 			ibat-rsense = <0>; /* 0: 2mohm, 1: 5mohm */
@@ -151,8 +151,8 @@
 			ibatucp-alm = <1000000>;
 			vbusovp = <10000000>;
 			vbusovp-alm = <9000000>;
-			ibusocp = <4250000>;
-			ibusocp-alm = <4000000>;
+			ibusocp = <5000000>;	/* OC: 4250000 -> 5000000 */
+			ibusocp-alm = <4750000>;	/* OC: 4000000 -> 4750000 */
 			vacovp = <11000000>;
 			wdt = <30000000>;
 			ibat-rsense = <0>; /* 0: 2mohm, 1: 5mohm */

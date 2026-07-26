@@ -16,13 +16,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev python3 python3-pip zip curl git
+          pip3 install gdown
 
       - name: Download Toolchain
         run: |
-          curl -L -o toolchain.tar.gz "https://drive.google.com/uc?export=download&id=1vsQfRgdNHlD0md9tF7j5fpkL_17whzbH" || true
-          if [ -f toolchain.tar.gz ]; then
-            tar -xzf toolchain.tar.gz || true
-          fi
+          gdown 1vsQfRgdNHlD0md9tF7j5fpkL_17whzbH -O toolchain.tar.gz
+          tar -xzf toolchain.tar.gz
 
       - name: Build Kernel
         run: |

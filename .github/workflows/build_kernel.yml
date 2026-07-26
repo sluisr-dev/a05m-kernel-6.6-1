@@ -1,0 +1,36 @@
+name: Build Samsung A05m Kernel 6.6
+
+on:
+  push:
+    branches: [ "main", "master", "main-clean" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev python3 python3-pip zip curl git
+
+      - name: Download Toolchain
+        run: |
+          curl -L -o toolchain.tar.gz "https://drive.google.com/uc?export=download&id=1vsQfRgdNHlD0md9tF7j5fpkL_17whzbH" || true
+          if [ -f toolchain.tar.gz ]; then
+            tar -xzf toolchain.tar.gz || true
+          fi
+
+      - name: Build Kernel
+        run: |
+          chmod +x build_kernel.sh
+          bash build_kernel.sh
+
+      - name: Upload Kernel Flashable Zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: a05m-custom-kernel-6.6
+          path: "*.zip"
